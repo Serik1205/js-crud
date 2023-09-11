@@ -1,53 +1,42 @@
-.form {
+.success {
   display: flex;
-  flex-direction: column;
   padding: 16px;
   gap: 32px;
 }
-.form__title {
+.success__title {
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 4px;
 }
-.form__content {
+.success__content {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.form__product {
+.success__product {
   display: flex;
   flex-direction: row;
   width: 40%;
 }
-.form__field {
+.success__field {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.form__label {
+.success__label {
   font-size: 14px;
 }
-.form__input {
+.success__input {
   border: 1px solid #ddd;
   padding: 8px;
 }
-.form__button {
+.success__button {
   border: 1px solid #ddd;
   padding: 8px;
   border-radius: 20px;
   background-color: blue;
   color: #ddd;
   text-decoration: none;
-}
-.form main {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.form .user-list li {
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

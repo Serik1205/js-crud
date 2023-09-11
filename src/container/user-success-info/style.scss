@@ -1,8 +1,7 @@
 @use '../../lib/service.scss' as s; 
 
-.form {
+.success {
 	display: flex;
-	flex-direction: column;
 	padding: s.space(4);
 	gap: s.space(8);
 
@@ -48,11 +47,5 @@
 		color: s.color("light");
 		text-decoration: none;
 	}
-	.action{
-		
-	}
-	.success{
-		display: flex;
-		flex-direction: row;
-	}
+	
 }

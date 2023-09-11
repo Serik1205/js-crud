@@ -1,8 +1,7 @@
 @use '../../lib/service.scss' as s; 
 
-.form {
+.card {
 	display: flex;
-	flex-direction: column;
 	padding: s.space(4);
 	gap: s.space(8);
 
@@ -31,6 +30,7 @@
 	}
 
 	&__label{
+		
 		font-size: 14px;
 
 	}
@@ -48,17 +48,4 @@
 		text-decoration: none;
 	}
 	
-	
-	main{
-		display: flex;
-		flex-direction: column;
-		gap: s.space(10);
-	}
-	.user-list {
-		li{
-			padding-right: 15px;
-			padding-top: 5px;
-			padding-bottom: 5px;
-		}
-}
 }
