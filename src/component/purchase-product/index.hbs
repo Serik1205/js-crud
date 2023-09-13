@@ -10,7 +10,8 @@
 	{{#each category}}
 	<span class="product-card__category product-card__category-{{id}}">{{text}}</span>
 	{{/each}}
-	<a href="/purchase-product?id={{id}}" class="product-card__button">Купити зараз:{{price}} гр</a>
+	<a href="/purchase-product?id={{id}}"><button class="button">Купити зараз{{#if price}}:
+			{{price}}гр{{/if}}</button></a>
 
 </div>
 {{/with}}

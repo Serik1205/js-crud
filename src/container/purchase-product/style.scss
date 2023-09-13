@@ -4,6 +4,7 @@
 @use '../../component/purchase-product/style.scss'as purchase-product;
 @use '../../component/divider/style.scss'as divider;
 @use '../../component/field/style.scss'as field;
+@use '../../component/button/style.scss'as button;
 
 
 .main{
@@ -56,16 +57,4 @@ height: 300px;
 	color:green;
 	border-color:green;
 }
-.product-info__button{
-	background-color: s.color(main);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: opacity 0.3s ease;
-	&:hover{
-		opacity: 0.7;
-	}
-}
+
