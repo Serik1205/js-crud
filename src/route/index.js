@@ -130,7 +130,7 @@ class Purchase {
 			if (data.lastname) purchase.lastname = data.lastname
 			if (data.phone) purchase.phone = data.phone
 			if (data.email) purchase.email = data.email
-			if (data.delivery) purchase.delivery = data.delivery
+
 
 			return true
 		} else {
@@ -140,6 +140,28 @@ class Purchase {
 }
 
 module.exports = Purchase
+
+class Promocode {
+	static #list = []
+	constructor(name, factor) {
+		this.name = name
+		this.factor = factor
+	}
+	static add = (name, promocode) => {
+		const newPromoCode = new Promocode(name, factor)
+		Promocode.#list.push(newPromoCode)
+		return newPromoCode
+	}
+	static getByName = (name) => {
+		return this.#list.find((promo) => promo.name === name)
+	}
+	static calc = (promo, price) => {
+		return price * promo.factor
+	}
+}
+Promocode.add("SUMMER 2023", 0.9)
+Promocode.add("DISCOUNT50", 0.5)
+Promocode.add("SALE25", 0.75)
 
 
 
@@ -275,6 +297,7 @@ router.post('/purchase-create', function (req, res) {
 	console.log(product, amount);
 	const productPrice = product.price * amount;
 	const totalPrice = productPrice + Purchase.DELIVERY_PRICE;
+	const bonus = Purchase.calcBonusAmount(totalPrice);
 
 
 	res.render('purchase-create', {
@@ -297,6 +320,7 @@ router.post('/purchase-create', function (req, res) {
 			productPrice,
 			deliveryPrice: Purchase.DELIVERY_PRICE,
 			amount,
+			bonus,
 		},
 	})
 })
@@ -317,7 +341,7 @@ router.post('/purchase-submit', function (req, res) {
 		email,
 		phone,
 		comment,
-		delivery,
+
 
 		promocode,
 		bonus,
@@ -430,7 +454,7 @@ router.post('/purchase-submit', function (req, res) {
 			promocode,
 			bonus,
 			comment,
-			delivery,
+
 		},
 		product,
 	)

@@ -11,26 +11,26 @@
 			{{#each cart}}
 			<li class="cart__item">
 				<span>{{text}}</span>
-				<span>{{price}} гр</span>
+				<span>{{price}}гр</span>
 			</li>
 			{{/each}}
 		</ul>
 		{{>divider}}
 		{{>heading title="Ваше замовлення"}}
-		{{>field label="Ім'я" name=firstname}}
-		{{>field label="Прізвище" name=lastname}}
-		{{>field label="Телефон" name=phone}}
-		{{>field label="Пошта" name=email}}
-		{{>field label="Коментар" name=comment}}
-		{{>field label="Спмчати бонуси" name=bonus}}
-		{{>field label="Промо-код" name=promocode}}
+		{{>field label="Ім'я" name="firstname"}}
+		{{>field label="Прізвище" name="lastname"}}
+		{{>field label="Телефон" name="phone"}}
+		{{>field label="Пошта" name="email"}}
+		{{>field label="Коментар" name="comment"}}
+		{{>field label="Спмчати бонуси" name="bonus"}}
+		{{>field label="Промо-код" name="promocode"}}
 		{{>divider}}
 		{{>field value=totalPrice name="totalPrice" disabled=true}}
 		{{>field value=productPrice name="productPrice"disabled=true}}
-		{{>field value=dileveryPrice name="deliveryPrice"disabled=true}}
+		{{>field value=deliveryPrice name="deliveryPrice"disabled=true}}
 		{{>field value=amount name="amount"disabled=true}}
 		<strong class="form-card__total">
-			Всього:{{total.price}} грн
+			Всього:{{totalPrice}}грн({{bonus}}гр бонусів)
 		</strong>
 		{{>button text="Оформити Замовлення"}}
 	</form>
