@@ -1,0 +1,53 @@
+@use '../../lib/service.scss' as s; 
+
+@use '../../component/heading/style.scss'as heading;
+@use '../../component/purchase-product/style.scss'as purchase-product;
+@use '../../component/divider/style.scss'as divider;
+@use '../../component/field/style.scss'as field;
+@use '../../component/button/style.scss'as button;
+
+
+.main{
+	gap:s.space(10) ;
+    padding: 20px;
+}
+.purchase__link{
+	text-decoration: none;
+	font-size: 16px;
+	color: gray;
+	
+}
+.text{
+	font-size: 16px;
+	color:s.color(black);
+}
+.purchase-item{
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+	width: 100%;
+}
+.product-info__divider{
+	width: 100%;
+	height: 1px;
+	background: s.color(border);
+}
+.purchase-item {
+	border: 1px solid s.color(border);
+	padding: 20px;
+	gap:s.space(10) ;
+	max-width: 100%;
+}
+
+
+.purchase-item__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+

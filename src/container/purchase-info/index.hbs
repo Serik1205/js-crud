@@ -1,0 +1,49 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+
+
+<main class="main">
+	{{>heading title="Інформація про замовлення"}}
+	{{#with data}}
+
+	<div class='purchase-info'>
+		{{>field-id}}
+		{{>divider}}
+		<div class="purchase-info__name">
+			<p><strong>Ім'я:</strong>{{firstname}}</p>
+			<p><strong>Прізвище:</strong>{{lastname}}</p>
+			<p><strong>Телефон:</strong>{{phone}}</p>
+			<p><strong>Електронна пошта:</strong>{{email}}</p>
+		</div>
+		{{>divider}}
+		<div class='purchase-item__block'>
+			<span class='title'>Назва товару</span>
+			<span class='text'>{{product}}</span>
+		</div>
+		{{>divider}}
+		<div class="purchase-info__name">
+			<div class='purchase-item__block'>
+				<span class='title'>Вартість товару</span>
+				<span class='text'>{{productPrice}} грн</span>
+			</div>
+			<div class='purchase-item__block'>
+				<span class='title'>Вартість доставки</span>
+				<span class='text'>{{deliveryPrice}} грн</span>
+			</div>
+			<div class='purchase-item__block'>
+				<span class='title'>Сума до сплати</span>
+				<span class='text'>{{totalPrice}} грн</span>
+			</div>
+			<div class='purchase-item__block'>
+				<span class='title'>Нараховані бонуси</span>
+				<span class='text'>{{bonus}} грн</span>
+			</div>
+		</div>
+	</div>
+	{{>divider}}
+	<a href='/purchase-info?id={{id}}' class="purchase__link">{{>button text="Змінити данні"}}</a>
+	{{/with}}
+</main>

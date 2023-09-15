@@ -1,0 +1,71 @@
+@use '../../lib/service.scss' as s; 
+
+@use '../../component/heading/style.scss'as heading;
+@use '../../component/purchase-product/style.scss'as purchase-product;
+@use '../../component/divider/style.scss'as divider;
+@use '../../component/field/style.scss'as field;
+@use '../../component/button/style.scss'as button;
+@use '../../component/field-id/style.scss'as field-id;
+
+
+.main{
+	gap:s.space(10) ;
+    padding: 20px;
+}
+.purchase__link{
+	text-decoration: none;
+	font-size: 16px;
+	color: gray;
+	
+}
+.text{
+	font-size: 16px;
+	color:s.color(black);
+}
+.purchase-info{
+	
+	display: flex;
+	flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+	width: 100%;
+}
+.purchase-info__name{
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+	padding:s.space(5) ;
+}
+.product-info__divider{
+	width: 100%;
+	height: 1px;
+	background: s.color(border);
+	gap: 20px;
+}
+.purchase-item {
+	border: 1px solid s.color(border);
+	padding: 20px;
+	gap:s.space(10) ;
+	max-width: 100%;
+}
+.p{
+	font-size: 16px;
+	color:s.color(black);
+}
+.strong {
+	font-size: 16px;
+	color: grey;
+}
+
+
+.purchase-item__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	gap:s.space(5) ;
+	padding:s.space(5) ;
+}
+
+

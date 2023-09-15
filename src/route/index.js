@@ -148,7 +148,7 @@ class Promocode {
 		this.factor = factor
 	}
 	static add = (name, promocode) => {
-		const newPromoCode = new Promocode(name, factor)
+		const newPromoCode = new Promocode(name, promocode)
 		Promocode.#list.push(newPromoCode)
 		return newPromoCode
 	}
@@ -461,6 +461,8 @@ router.post('/purchase-submit', function (req, res) {
 
 	console.log(purchase)
 
+
+
 	// ↙️ cюди вводимо назву файлу з сontainer
 	res.render('alert', {
 		style: 'alert',
@@ -474,7 +476,63 @@ router.post('/purchase-submit', function (req, res) {
 	})
 	// ↑↑ сюди вводимо JSON дані
 })
+router.get('/purchase-list', function (req, res) {
+	// res.render генерує нам HTML сторінку
+	// console.log(bonus)
 
+	const list = Purchase.getList()
+	console.log('purchase-list:', list)
+
+	// ↙️ cюди вводимо назву файлу з сontainer
+	res.render('purchase-list', {
+		// вказуємо назву папки контейнера, в якій знаходяться наші стилі
+		style: 'purchase-list',
+		component: ['heading', 'purchase-item', 'divider'],
+		title: 'Мої замовлення',
+
+		data: {
+			purchases: {
+				list,
+			},
+			// bonus, // Отримати bonusAmount з параметрів URL
+		},
+	})
+	// ↑↑ сюди вводимо JSON дані
+})
+router.get('/purchase-info', function (req, res) {
+	// res.render генерує нам HTML сторінку
+	const id = Number(req.query.id)
+	const purchase = Purchase.getById(id)
+	const bonus = Purchase.calcBonusAmount(
+		purchase.totalPrice,
+	)
+
+	console.log('purchase:', purchase, bonus)
+
+	// ↙️ cюди вводимо назву файлу з сontainer
+	res.render('purchase-info', {
+		// вказуємо назву папки контейнера, в якій знаходяться наші стилі
+		style: 'purchase-info',
+		component: ['heading', 'divider', 'button'],
+
+		title: 'Інформація про замовлення',
+
+		data: {
+			id: purchase.id,
+			firstname: purchase.firstname,
+			lastname: purchase.lastname,
+			phone: purchase.phone,
+			email: purchase.email,
+			delivery: purchase.delivery,
+			product: purchase.product.title,
+			productPrice: purchase.productPrice,
+			deliveryPrice: purchase.deliveryPrice,
+			totalPrice: purchase.totalPrice,
+			bonus: bonus,
+		},
+	})
+	// ↑↑ сюди вводимо JSON дані
+})
 
 
 
