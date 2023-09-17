@@ -57,10 +57,38 @@ router.post('/product-create', function (req, res) {
 	console.log(Product.getList());
 
 	// ↙️ cюди вводимо назву файлу з сontainer
-	res.render("success-info", {
+	res.render("alert-product", {
 		// вказуємо назву папки контейнера, в якій знаходяться наші стилі
-		style: "success-info",
-		info: 'Продукт створений',
+		style: "alert-product",
+		data: {
+			link: '/product-list',
+			title: 'Успішне виконання дії',
+			info: 'Продукт створений',
+		},
+	})
+	// ↑↑ сюди вводимо JSON дані
+})
+router.get('/product-list', function (req, res) {
+	const products = Product.add(
+		{
+			name,
+			description,
+			price
+
+		},
+
+	) = req.body;
+
+	console.log(products)
+	// ↙️ cюди вводимо назву файлу з сontainer
+	res.render("alert-product", {
+		// вказуємо назву папки контейнера, в якій знаходяться наші стилі
+		style: "alert-product",
+		data: {
+			link: '/product-list',
+			title: 'Успішне виконання дії',
+			info: 'Продукт створений',
+		},
 	})
 	// ↑↑ сюди вводимо JSON дані
 })
