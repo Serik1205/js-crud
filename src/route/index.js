@@ -533,6 +533,33 @@ router.get('/purchase-info', function (req, res) {
 	})
 	// ↑↑ сюди вводимо JSON дані
 })
+router.get('/purchase-upd', function (req, res) {
+	// res.render генерує нам HTML сторінку
+	const id = Number(req.query.id)
+
+	const purchase = Purchase.updateById(id)
+	console.log('purchase:', purchase)
+
+	// ↙️ cюди вводимо назву файлу з сontainer
+	res.render('purchase-upd', {
+		// вказуємо назву папки контейнера, в якій знаходяться наші стилі
+		style: 'purchase-upd',
+		component: ['heading', 'divider', 'button'],
+
+		title: 'Зміна данних',
+
+		data: {
+			id: purchase.id,
+			firstname: purchase.firstname,
+			lastname: purchase.lastname,
+			phone: purchase.phone,
+			email: purchase.email,
+
+		},
+	})
+	// ↑↑ сюди вводимо JSON дані
+})
+
 
 
 

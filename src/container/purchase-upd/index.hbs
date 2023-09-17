@@ -1,0 +1,21 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<main class="main">
+	{{#with data}}
+	<form class="form-card">
+		{{>heading title="Зміна данних"}}
+		<div class="cart">
+			{{>field-id}}
+			{{>field label="Ім'я" name="firstname"}}
+			{{>field label="Прізвище" name="lastname"}}
+			{{>field label="Телефон" name="phone"}}
+			{{>field label="Пошта" name="email"}}
+		</div>
+		{{>button text="Зберегти зміни"}}
+	</form>
+
+	{{/with}}
+</main>
