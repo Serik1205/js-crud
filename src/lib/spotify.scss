@@ -1,6 +1,5 @@
-@use '../../lib/service.scss' as s; 
-@use '../../lib/spotify.scss' as spotify; 
 
+@use './service.scss' as s; 
 
 .a{
 	text-decoration: none;
@@ -11,7 +10,7 @@
 	}
 }
 .main{
-	background-color: s.color(dark);
+	background-color: s.color(black);
 	height: 100%;
 	color: s.color(light);
 	display: flex;
