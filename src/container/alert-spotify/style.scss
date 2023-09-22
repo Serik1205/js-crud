@@ -1,0 +1,43 @@
+@use '../../lib/service.scss' as s; 
+
+.card {
+	display: flex;
+	padding: s.space(4);
+	gap: s.space(8);
+
+
+	.card__title {
+		font-size: 18px;
+		font-weight: bold;
+		padding-bottom: s.space(1);
+		color: s.color(black);
+	}
+	.card__subtitle {
+		font-size: 16px;
+		color: gray;
+	}
+	.card__product{
+		display: flex;
+		flex-direction: row;
+		width: 40%;
+	}
+
+	
+
+	.card__label{
+		
+		font-size: 14px;
+
+	}
+	
+		
+	}
+	.card__button{
+		border:1px solid s.color("light");
+		padding: s.space(2);
+		border-radius: 20px;
+		background-color: s.color("primary");
+		color: s.color("light");
+		text-decoration: none;
+	}
+	
