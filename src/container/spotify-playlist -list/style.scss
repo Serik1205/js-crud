@@ -1,0 +1,44 @@
+@use '../../lib/service.scss' as s; 
+@use '../../lib/spotify.scss' as spotify; 
+
+
+.add__button{
+	display: grid;
+	grid-template-columns: 92px 1fr;
+	align-items: center;
+	gap: s.space(6);
+	color: s.color(light);
+	font-size: 18px;
+}
+
+.list-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.list-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-width: 300px;
+    text-align: center;
+    padding: 10px;
+}
+
+.list-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.list-card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.list-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}

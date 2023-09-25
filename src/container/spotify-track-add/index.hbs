@@ -6,19 +6,18 @@
 <main class="main">
 	{{#with data}}
 	<div class="main__content">
-		<h1 class="title title--center">Пошук плейлистів</h1>
-		<form method="POST" action="/spotify-search" class="search">
-			<img src="/svg/spotify-search.svg">
-			<input type="search" class="search__input" placeholder="Введіть запит" name="value" value="{{value}}">
-			<button class="search__button">Пошук</button>
-		</form>
-		<ul class="playlist__list">
+		<h1 class="title title--center">Мій плейліст №2</h1>
+		<a href="/spotify-track-add?trackId={{id}}" class="add-button">
+			<img src="/svg/add_button.svg">
+			Додати до плейліста
+		</a>
+		<ul class="track__list">
 			{{#each tracks}}
-			<li class="playlist">
+			<li class="track">
 				<img src="{{image}}" alt="{{name}}">
-				<div class="playlist__content">
-					<strong class="playlist__name">{{name}}</strong>
-					<em class="playlist__author">Кількість пісень:{{author}}</em>
+				<div class="track__content">
+					<strong class="track__name">{{name}}</strong>
+					<em class="track__author">{{author}}</em>
 				</div>
 				<a href="/spotify-track-delete?playlistId={{../playlistId}}&trackId={{id}}">
 					<img src="/svg/delete_button.svg">

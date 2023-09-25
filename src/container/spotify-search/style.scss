@@ -13,6 +13,10 @@
 	color: s.color(light);
 	font-size: 24px;
 	&__button{
-		color:  s.color(light);
+		transition: opacity 0.6s;
+	&:hover{
+		opacity: 0.6;
+	}
+		color: s.color(light);
 	}
 }
